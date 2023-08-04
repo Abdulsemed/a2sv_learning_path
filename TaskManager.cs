@@ -25,16 +25,17 @@ class MainClass
     // class for manipulating files
     public class FileManager
     {
-        public async Task WriteToFile(FileStream fs, List<Tasks> tasks)
+        public async Task WriteToFile(string nameOfFile,List<Tasks> tasks)
         {
+            FileStream fs = File.Open(nameOfFile, FileMode.Open, FileAccess.ReadWrite);
             //file open and write to Tasks
             foreach (Tasks task in tasks)
             {
-                byte[] encodedText = Encoding.Unicode.GetBytes(task.Name + " " + task.Description + " " + task.Category + " " + task.IsCompleted+"\n");
+                byte[] encodedText = Encoding.Unicode.GetBytes(task.Name + " " + task.Description + " " + task.Category + " " + task.IsCompleted + "\n");
                 await fs.WriteAsync(encodedText);
             }
 
-            
+
         }
         // method read tasks from txt and append the to taks list
         public async Task ReadFile(FileStream fs, List<Tasks> tasks)
@@ -45,12 +46,12 @@ class MainClass
             string description;
             Category category;
             bool isCompleted = false;
-            while((text = await streamReader.ReadLineAsync()) != null)
+            while ((text = await streamReader.ReadLineAsync()) != null)
             {
                 string[] lists = text.Split(" ");
                 name = lists[0];
                 description = lists[1];
-                category =(Category) Enum.Parse(typeof(Category), lists[2]);
+                category = (Category)Enum.Parse(typeof(Category), lists[2]);
                 if (lists[3] == "true")
                 {
                     isCompleted = true;
@@ -66,7 +67,7 @@ class MainClass
     public class TaskManager
     {
         public List<Tasks> Tasks = new List<Tasks>();
-        private string nameOfFile = "tasks.txt";
+        protected string nameOfFile = "tasks.txt";
         FileManager fileManager = new FileManager();
         public TaskManager()
         {
@@ -83,27 +84,27 @@ class MainClass
                 FileStream fs = File.Open(nameOfFile, FileMode.Open, FileAccess.ReadWrite);
                 await fileManager.ReadFile(fs, Tasks);
                 fs.Close();
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
         }
 
-       
+
         public async void AddTask(Tasks task)
         {
             try
             {
-                FileStream fs = File.Open(nameOfFile, FileMode.Open, FileAccess.ReadWrite);
                 Tasks.Add(task);
-                await fileManager.WriteToFile(fs, Tasks);
-                fs.Close();
+                await fileManager.WriteToFile(nameOfFile,Tasks);
             }
-            catch (Exception ex) { 
+            catch (Exception ex)
+            {
                 Console.WriteLine(ex.Message);
             }
             // file read and write here
-            
+
         }
         private void Display(List<Tasks> param)
         {
@@ -142,7 +143,7 @@ class MainClass
             Tasks[Tasks.IndexOf(oldTask)] = updatedTask;
             FileStream fs = File.Open(nameOfFile, FileMode.Open, FileAccess.ReadWrite);
             // file read and write here
-            await fileManager.WriteToFile(fs, Tasks);
+            await fileManager.WriteToFile(nameOfFile, Tasks);
             fs.Close();
         }
     }
@@ -173,7 +174,7 @@ class MainClass
         {
             return 3;
         }
-        else if(value < 0 && value > 3)
+        else if (value < 0 && value > 3)
         {
             return 3;
         }
@@ -210,12 +211,13 @@ class MainClass
             Console.WriteLine(" 1. add a Task  \n 2. view Tasks \n 3. filter tasks \n 4. update a task \n other. exit");
             try
             {
-               choice = Convert.ToInt32(Console.ReadLine());
-            }catch(Exception ex)
-            {
-                Console.WriteLine(ex.Message +" message end");
+                choice = Convert.ToInt32(Console.ReadLine());
             }
-            
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message + " message end");
+            }
+
             if (choice < 5 && choice > 0)
             {
                 if (choice == 1)

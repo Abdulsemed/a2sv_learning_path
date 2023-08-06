@@ -1,40 +1,80 @@
 using System;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 class MainClass
 {
-    class Student
+    public class Student
     {
         //protected int Id { get; set; }
         public string Name ="";
-        public readonly int Rollnumber = 1;
+        public readonly int RollNumber = 1;
         public int Age = 0;
         public double Grade = 0.0;
-        public Student(int roll, string name, int age, double grade) { 
-            Rollnumber = roll;
-            Name = name;
-            Age = age;
-            Grade = grade;
+        [JsonConstructor]
+        public Student(string Name,int RollNumber, int Age, double Grade) { 
+            this.RollNumber = RollNumber;
+            this.Name = Name;
+            this.Age = Age;
+            this.Grade = Grade;
         }
         public override string ToString()
         {
-            return $"{Rollnumber} \t {Name} \t {Age} \t {Grade}";
+            return $"{RollNumber} \t {Name} \t {Age} \t {Grade}";
         }
+
     }
     class StudentList<T>
     {
-        public List<T> students = new List<T>();
-
+        protected List<T> students = new List<T>();
+        //change access
+        protected string FileName = "students.json";
+        public List<T> GetStudents()
+        {
+            return students ;
+        }
+        public async void Init()
+        {
+            if(!File.Exists(FileName)) {
+                File.Create(FileName).Close();
+            }
+            ReadFromJson();
+        }
+        public void ReadFromJson()
+        {
+            var options = new JsonSerializerOptions
+            {
+                IncludeFields = true,
+            };
+            string StringJson = File.ReadAllText(FileName);
+            try
+            {
+                students = JsonSerializer.Deserialize<List<T>>(StringJson,options)!;
+            }catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        public void WriteToJson()
+        {
+            var options = new JsonSerializerOptions
+            {
+                IncludeFields = true,
+            };
+            string jsonString = JsonSerializer.Serialize(students,options);
+            File.WriteAllText(FileName, jsonString);
+        }
         public void AddStudent(T student)
         {
             students.Add(student);
         }
-        private void DisplayStudent(List<T> item)
+        private void DisplayStudent(List<T> items)
         {
             Console.WriteLine("RollNumber \t Name \t Age \t Grade");
-            foreach (var student in item)
+            foreach (var item in items)
             {
-                Console.WriteLine(student.ToString());
+                Console.WriteLine(item.ToString());
             }
         }
         public void ViewStudent()
@@ -49,7 +89,7 @@ class MainClass
         public static void SearchStudentById(List<Student> studentList,int query)
         {
 
-           IEnumerable<Student> result = from student in studentList where student.Rollnumber == query select student;
+           IEnumerable<Student> result = from student in studentList where student.RollNumber == query select student;
            if(result.Count() == 1)
             {
                 Console.WriteLine(result.ElementAt(0).ToString());
@@ -74,6 +114,7 @@ class MainClass
             }
         }
     }
+  
     public static string inputAccepeter(string param)
     {
         string input = "";
@@ -100,7 +141,7 @@ class MainClass
         {
             return 1.0;
         }
-        else if (value < 0 && value > 4.0)
+        else if (value < 0)
         {
             return 1.0;
         }
@@ -112,6 +153,7 @@ class MainClass
     {
         StudentList<Student> students = new StudentList<Student>();
         bool flag = true;
+        students.Init();
         int choice = 0;
         do
         {
@@ -132,9 +174,14 @@ class MainClass
                 {
                     string name = inputAccepeter("name of student");
                     double grade = ForDouble(inputAccepeter("enter student grade"));
+                    if (grade <0 || grade > 4)
+                    {
+                        grade = 1.0;
+                    }
                     int age = (int)ForDouble(inputAccepeter("enter student age"));
-                    Student student = new Student(students.Count()+1, name, age, grade);
+                    Student student = new Student(name, students.Count()+1,  age, grade);
                     students.AddStudent(student);
+                    students.WriteToJson();
                 }
                 else if (choice == 2)
                 {
@@ -142,11 +189,11 @@ class MainClass
                 }
                 else if (choice == 3)
                 {
-                    StudentList<Student>.SearchStudentByName(students.students,inputAccepeter("name of student to search"));
+                    StudentList<Student>.SearchStudentByName(students.GetStudents(),inputAccepeter("name of student to search"));
 
                 }else if(choice == 4)
                 {
-                    StudentList<Student>.SearchStudentById(students.students,(int)ForDouble(inputAccepeter("id of student to search")));
+                    StudentList<Student>.SearchStudentById(students.GetStudents(),(int)ForDouble(inputAccepeter("id of student to search")));
                 }
 
             }

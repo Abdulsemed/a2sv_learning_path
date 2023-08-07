@@ -54,7 +54,7 @@ class MainClass
                 students = JsonSerializer.Deserialize<List<T>>(StringJson,options)!;
             }catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine("the json file is empty");
             }
         }
         // method to write to a json file

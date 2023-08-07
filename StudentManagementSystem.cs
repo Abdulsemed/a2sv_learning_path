@@ -7,7 +7,6 @@ class MainClass
 {
     public class Student
     {
-        //protected int Id { get; set; }
         public string Name ="";
         public readonly int RollNumber = 1;
         public int Age = 0;
@@ -25,6 +24,7 @@ class MainClass
         }
 
     }
+    // generic class to create diffrent types of list
     class StudentList<T>
     {
         protected List<T> students = new List<T>();
@@ -41,6 +41,7 @@ class MainClass
             }
             ReadFromJson();
         }
+        // method to read from a json file 
         public void ReadFromJson()
         {
             var options = new JsonSerializerOptions
@@ -56,6 +57,7 @@ class MainClass
                 Console.WriteLine(ex.Message);
             }
         }
+        // method to write to a json file
         public void WriteToJson()
         {
             var options = new JsonSerializerOptions
@@ -81,6 +83,7 @@ class MainClass
         {
             DisplayStudent(students);
         }
+        // to assign a unique roll number we get the size of the lists
         public int Count()
         {
             return students.Count-1;
@@ -114,7 +117,7 @@ class MainClass
             }
         }
     }
-  
+    // method to accept string input from console and validate it
     public static string inputAccepeter(string param)
     {
         string input = "";
@@ -133,7 +136,7 @@ class MainClass
         } while (string.IsNullOrEmpty(input));
         return input;
     }
-    // function to accept and validate integer inputs returns a default 3
+    // function to accept and validate double inputs returns a default 1 for both age and grade
     public static double ForDouble(string str)
     {
         double value;
@@ -167,7 +170,7 @@ class MainClass
             {
                 Console.WriteLine(ex.Message + " message end");
             }
-
+            // menu for the console app
             if (choice < 5 && choice > 0)
             {
                 if (choice == 1)

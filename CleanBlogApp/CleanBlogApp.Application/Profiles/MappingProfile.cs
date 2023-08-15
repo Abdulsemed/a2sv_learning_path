@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using CleanBlogApp.Application.DTOs;
-using CleanBlogApp.Application.DTOs.common;
 using CleanBlogApp.Domain;
 using System;
 using System.Collections.Generic;

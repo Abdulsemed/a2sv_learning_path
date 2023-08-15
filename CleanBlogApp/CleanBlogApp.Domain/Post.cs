@@ -1,4 +1,5 @@
 ﻿using System.Xml.Linq;
+using CleanBlogApp.Domain.common;
 
 namespace CleanBlogApp.Domain;
 public class Post : BaseDomainEntity

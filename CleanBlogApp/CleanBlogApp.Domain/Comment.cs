@@ -1,4 +1,6 @@
-﻿namespace CleanBlogApp.Domain;
+﻿using CleanBlogApp.Domain.common;
+
+namespace CleanBlogApp.Domain;
 public class Comment : BaseDomainEntity
 {
     public int CommentId { get; set; }

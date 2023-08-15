@@ -1,4 +1,7 @@
 ﻿using AutoMapper;
+using CleanBlogApp.Application.DTOs;
+using CleanBlogApp.Application.DTOs.common;
+using CleanBlogApp.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +13,7 @@ public class MappingProfile : Profile
 {
     public MappingProfile()
     {
-        
+        CreateMap<Post,PostDTO>().ReverseMap();
+        CreateMap<Comment, CommentDTO>().ReverseMap();
     }
 }

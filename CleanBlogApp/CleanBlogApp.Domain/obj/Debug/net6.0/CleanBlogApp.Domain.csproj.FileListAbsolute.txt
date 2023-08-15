@@ -1,0 +1,12 @@
+C:\Users\Bebe_x\source\repos\CleanBlogApp\CleanBlogApp.Domain\bin\Debug\net6.0\CleanBlogApp.Domain.deps.json
+C:\Users\Bebe_x\source\repos\CleanBlogApp\CleanBlogApp.Domain\bin\Debug\net6.0\CleanBlogApp.Domain.dll
+C:\Users\Bebe_x\source\repos\CleanBlogApp\CleanBlogApp.Domain\bin\Debug\net6.0\CleanBlogApp.Domain.pdb
+C:\Users\Bebe_x\source\repos\CleanBlogApp\CleanBlogApp.Domain\obj\Debug\net6.0\CleanBlogApp.Domain.csproj.AssemblyReference.cache
+C:\Users\Bebe_x\source\repos\CleanBlogApp\CleanBlogApp.Domain\obj\Debug\net6.0\CleanBlogApp.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bebe_x\source\repos\CleanBlogApp\CleanBlogApp.Domain\obj\Debug\net6.0\CleanBlogApp.Domain.AssemblyInfoInputs.cache
+C:\Users\Bebe_x\source\repos\CleanBlogApp\CleanBlogApp.Domain\obj\Debug\net6.0\CleanBlogApp.Domain.AssemblyInfo.cs
+C:\Users\Bebe_x\source\repos\CleanBlogApp\CleanBlogApp.Domain\obj\Debug\net6.0\CleanBlogApp.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Bebe_x\source\repos\CleanBlogApp\CleanBlogApp.Domain\obj\Debug\net6.0\CleanBlogApp.Domain.dll
+C:\Users\Bebe_x\source\repos\CleanBlogApp\CleanBlogApp.Domain\obj\Debug\net6.0\refint\CleanBlogApp.Domain.dll
+C:\Users\Bebe_x\source\repos\CleanBlogApp\CleanBlogApp.Domain\obj\Debug\net6.0\CleanBlogApp.Domain.pdb
+C:\Users\Bebe_x\source\repos\CleanBlogApp\CleanBlogApp.Domain\obj\Debug\net6.0\ref\CleanBlogApp.Domain.dll

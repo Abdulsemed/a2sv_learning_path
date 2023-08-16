@@ -9,8 +9,10 @@ using System.Threading.Tasks;
 namespace CleanBlogApp.Application;
 public static class ApplicationServicesRegistration
 {
-    public static void ConfigureApplicationService(this IServiceCollection services)
+    public static IServiceCollection ConfigureApplicationService(this IServiceCollection services)
     {
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
+        services.AddMediatR(cfg=> cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+        return services;
     }
 }

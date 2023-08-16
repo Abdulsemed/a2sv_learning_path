@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace CleanBlogApp.Application.DTOs.common;
 public class BaseDTO
 {
-    public int PostId { get; set; }
+    public int id { get; set; }
     public DateTime CreatedAt { get; set; }
 }
 

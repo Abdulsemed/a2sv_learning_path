@@ -1,0 +1,91 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "SocialMediaApp.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/SocialMediaApp.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SocialMediaApp.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SocialMediaApp.Domain/1.0.0": {
+      "type": "project",
+      "path": "../SocialMediaApp.Domain/SocialMediaApp.Domain.csproj",
+      "msbuildProject": "../SocialMediaApp.Domain/SocialMediaApp.Domain.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "SocialMediaApp.Domain >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Bebe_x\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Bebe_x\\source\\repos\\SocialMediaApp\\SocialMediaApp.Application\\SocialMediaApp.Application.csproj",
+      "projectName": "SocialMediaApp.Application",
+      "projectPath": "C:\\Users\\Bebe_x\\source\\repos\\SocialMediaApp\\SocialMediaApp.Application\\SocialMediaApp.Application.csproj",
+      "packagesPath": "C:\\Users\\Bebe_x\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Bebe_x\\source\\repos\\SocialMediaApp\\SocialMediaApp.Application\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Bebe_x\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {
+            "C:\\Users\\Bebe_x\\source\\repos\\SocialMediaApp\\SocialMediaApp.Domain\\SocialMediaApp.Domain.csproj": {
+              "projectPath": "C:\\Users\\Bebe_x\\source\\repos\\SocialMediaApp\\SocialMediaApp.Domain\\SocialMediaApp.Domain.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

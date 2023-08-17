@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace SocialMediaApp.Application.Persistence.Contracts;
 
-public class IGenericRepository
+public interface IGenericRepository<T> where T : class
 {
+    Task<IReadOnlyList<T>> GetAll();
+    Task<T> GetById(int id);
+    Task<T> Add(T entity);
+    Task<T> Update(T entity);
+    Task<T> Delete(T entity);
+
+
 }

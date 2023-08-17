@@ -1,8 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "WCY3Q33IuyRs+sCI9Y+hMAsaly8/rhgWRkPjbXa6rwQo9aQI5SjfZgSKwtlk7Hyrcv4JxicmZ9vG8UZShG3sOg==",
+  "dgSpecHash": "MXAoh7yQji3E6dEmALNQBgNCYn2AkunmAGh40iec6bxRfVknR5NL5Bbt9ugcioJ2GBaq8bNq+3G0gLsFXVnKSA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Bebe_x\\source\\repos\\SocialMediaApp\\SocialMediaApp.Application\\SocialMediaApp.Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Bebe_x\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Bebe_x\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "C:\\Users\\Bebe_x\\.nuget\\packages\\mediatr\\12.1.1\\mediatr.12.1.1.nupkg.sha512",
+    "C:\\Users\\Bebe_x\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\Bebe_x\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\Bebe_x\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Bebe_x\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\Bebe_x\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\Bebe_x\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
